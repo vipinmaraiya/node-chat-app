@@ -1,3 +1,4 @@
+
 const path = require("path"),
 express = require("express"),
 app = express(),
@@ -13,8 +14,26 @@ io.on("connection", (socket) =>{
 
     socket.on("disconnect", ()=>{
         console.log("User was disconnected");
+    });
+    socket.emit("newMail",{
+        from:"vipinshar@gmail.com",
+        text:"hey there"
+    });
+
+    socket.on("createEmail",(newEmail) =>{
+        console.log(newEmail);
+    });
+
+    socket.emit("newMessage", {
+        from:"Server",
+        text:"Hey client"
     })
+
+    socket.on("createMsg" ,(msg) =>{
+        console.log(msg);
+    });
 });
+
 
 const publicPath = path.join(__dirname,
     "../public");
