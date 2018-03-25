@@ -10,6 +10,6 @@ socket.on("newMessage",(msg)=>{
     console.log(msg);
 });
 
-socket.on("welcomeText", (msg) =>{
+socket.on("greetingMesage", (msg) =>{
     console.log(msg);
 });
