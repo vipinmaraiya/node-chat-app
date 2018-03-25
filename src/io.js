@@ -4,19 +4,12 @@ socket.on("connect",()=>{
 });
 socket.on("disconnect",()=>{
     console.log("Disconnected from server");
-})
-
-socket.on("newMail" ,(email)=>{
-console.log(email);
 });
 
-socket.on("newMessage", (msg) =>{
-    console.log(msg)
-})
+socket.on("newMessage",(msg)=>{
+    console.log(msg);
+});
 
-socket.emit("createMsg", {
-    from:"client",
-    text:"hey server"
-})
-
-socket.emit("createEmail", "Hey there");
+socket.on("welcomeText", (msg) =>{
+    console.log(msg);
+});

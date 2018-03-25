@@ -79,7 +79,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar socket = io();\nsocket.on(\"connect\", function () {\n    console.log(\"connected to server\");\n});\nsocket.on(\"disconnect\", function () {\n    console.log(\"Disconnected from server\");\n});\n\nsocket.on(\"newMail\", function (email) {\n    console.log(email);\n});\n\nsocket.on(\"newMessage\", function (msg) {\n    console.log(msg);\n});\n\nsocket.emit(\"createMsg\", {\n    from: \"client\",\n    text: \"hey server\"\n});\n\nsocket.emit(\"createEmail\", \"Hey there\");\n\n//# sourceURL=webpack:///./src/io.js?");
+eval("\n\nvar socket = io();\nsocket.on(\"connect\", function () {\n    console.log(\"connected to server\");\n});\nsocket.on(\"disconnect\", function () {\n    console.log(\"Disconnected from server\");\n});\n\nsocket.on(\"newMessage\", function (msg) {\n    console.log(msg);\n});\n\nsocket.on(\"welcomeText\", function (msg) {\n    console.log(msg);\n});\n\n//# sourceURL=webpack:///./src/io.js?");
 
 /***/ }),
 

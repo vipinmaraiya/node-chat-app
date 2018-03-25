@@ -1,9 +1,6 @@
 const path = require("path");
 
-const environment = process.env.ISPROD || "development";
-
 const config = {
-    mode: environment,
     entry:"./webpack.entry.js",
     output:{
         path:path.resolve(__dirname, "public/js"),
