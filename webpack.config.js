@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 const config = {
     entry:"./webpack.entry.js",
@@ -13,7 +14,14 @@ const config = {
                 test:/\.js$/
             }
         ]
-    }
+    },
+    plugins:[
+        new webpack.ProvidePlugin({
+            $:"jquery",
+            jquery:"jquery",
+            jQuery:"jquery"
+        })
+    ]
 }
 
 module.exports = config;
